@@ -1,0 +1,97 @@
+{
+ "bot": "school",
+ "chat": [
+  {
+   "id": 101,
+   "from": "user",
+   "chat": 1,
+   "text": "/start"
+  },
+  {
+   "id": 102,
+   "from": "bot",
+   "chat": 1,
+   "text": "Hi! Я бот школы <b>Talkie</b> 🇬🇧\nОпределю ваш уровень английского за 2 минуты и запишу на бесплатный пробный урок.\n\n✅ <b>Пройти тест</b>",
+   "buttons": []
+  },
+  {
+   "id": 103,
+   "from": "bot",
+   "chat": 1,
+   "text": "Вопрос 1/5\n\n<b>I _____ from Moscow.</b>\n\n✅ <b>am</b>",
+   "buttons": []
+  },
+  {
+   "id": 104,
+   "from": "bot",
+   "chat": 1,
+   "text": "Вопрос 2/5\n\n<b>She _____ to work by metro every day.</b>\n\n✅ <b>goes</b>",
+   "buttons": []
+  },
+  {
+   "id": 105,
+   "from": "bot",
+   "chat": 1,
+   "text": "Вопрос 3/5\n\n<b>I _____ this film last weekend.</b>\n\n✅ <b>saw</b>",
+   "buttons": []
+  },
+  {
+   "id": 106,
+   "from": "bot",
+   "chat": 1,
+   "text": "Вопрос 4/5\n\n<b>If I _____ more free time, I would travel more.</b>\n\n✅ <b>have</b>",
+   "buttons": []
+  },
+  {
+   "id": 107,
+   "from": "bot",
+   "chat": 1,
+   "text": "Вопрос 5/5\n\n<b>By next June, she _____ here for ten years.</b>\n\n✅ <b>will have worked</b>",
+   "buttons": []
+  },
+  {
+   "id": 108,
+   "from": "bot",
+   "chat": 1,
+   "text": "Ваш уровень: <b>B1+</b> (4 из 5)\n\nНа пробном уроке преподаватель уточнит уровень в разговоре и составит план на 3 месяца. Когда удобно?\n\n✅ <b>Суббота 11:00</b>",
+   "buttons": []
+  },
+  {
+   "id": 109,
+   "from": "bot",
+   "chat": 1,
+   "text": "Последний шаг: оставьте номер, пришлём ссылку на урок и напоминание.",
+   "buttons": [],
+   "reply_kb": [
+    [
+     "📱 Отправить номер"
+    ]
+   ]
+  },
+  {
+   "id": 110,
+   "from": "user",
+   "chat": 1,
+   "text": "📱 89001234567",
+   "contact": true
+  },
+  {
+   "id": 111,
+   "from": "bot",
+   "chat": 1,
+   "text": "Готово! Пробный урок: <b>Суббота 11:00</b>.\nЗа час пришлю ссылку. See you! 👋",
+   "buttons": [],
+   "reply_kb": []
+  }
+ ],
+ "admin": [
+  {
+   "id": 112,
+   "from": "bot",
+   "chat": 999,
+   "text": "🎓 Пробный урок: Суббота 11:00\nУровень по тесту: B1+\nКлиент: Анна Смирнова, +79001234567",
+   "buttons": []
+  }
+ ],
+ "toasts": []
+}

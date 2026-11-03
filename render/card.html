@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+    * { box-sizing: border-box; margin: 0; }
+    body { font-family: Manrope, sans-serif; }
+    .card { position: relative; width: 1320px; height: 880px; overflow: hidden; display: grid; grid-template-columns: 1fr 440px; gap: 56px; padding: 50px 96px 0 88px;
+        background: radial-gradient(circle at 85% 20%, color-mix(in srgb, var(--a) 45%, transparent), transparent 55%), linear-gradient(140deg, #14112b, #1d1840); color: #e7e5f4; }
+    .tag { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; letter-spacing: .06em; text-transform: uppercase; color: #fff;
+        background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); padding: 10px 18px; border-radius: 99px; }
+    .tag i { width: 10px; height: 10px; border-radius: 50%; background: #22c55e; }
+    h1 { font: 800 54px/1.08 Unbounded, sans-serif; color: #fff; margin: 28px 0 18px; letter-spacing: -.02em; }
+    h1 em { font-style: normal; color: color-mix(in srgb, var(--a) 55%, #fff); }
+    .sub { font-size: 22px; color: #b9b5d6; font-weight: 600; }
+    ul { list-style: none; padding: 0; margin-top: 34px; display: grid; gap: 14px; }
+    li { display: flex; align-items: center; gap: 14px; font-size: 22px; font-weight: 700; color: #fff; }
+    li::before { content: ""; width: 28px; height: 28px; flex: none; border-radius: 50%; background: var(--a) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 15px no-repeat; }
+    .admin { margin-top: 40px; width: 560px; background: #fff; color: #1f1d33; border-radius: 22px; padding: 18px 22px; box-shadow: 0 24px 50px -20px rgba(0,0,0,.6); }
+    .admin__head { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 800; color: #6b6890; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 10px; }
+    .admin__head b { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; background: var(--a); color: #fff; font-size: 15px; }
+    .admin p { font-size: 17px; line-height: 1.4; font-weight: 600; white-space: pre-line; }
+    .admin p + p { margin-top: 10px; padding-top: 10px; border-top: 1px dashed #e2e0ef; }
+    .admin p.me { color: #2f6b45; }
+
+    .phone { position: relative; align-self: start; height: 790px; border-radius: 56px; background: #0b0a14; padding: 14px; box-shadow: 0 40px 80px -30px rgba(0,0,0,.8), inset 0 0 0 2px #2c2a40; }
+    .screen { height: 100%; border-radius: 44px; overflow: hidden; display: flex; flex-direction: column; background: #dfe7ef; }
+    .top { display: flex; align-items: center; gap: 12px; padding: 40px 18px 12px; background: #fff; border-bottom: 1px solid #e5e8ee; }
+    .ava { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 800; background: var(--a); font-size: 16px; }
+    .top .ava { color: #fff; }
+    .top b { display: block; font-size: 17px; color: #111; }
+    .top span { font-size: 13px; color: #7a8592; }
+    .msgs { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; padding: 12px; overflow: hidden;
+        background: #dfe7ef radial-gradient(circle, rgba(255,255,255,.5) 1.2px, transparent 1.3px) 0 0 / 18px 18px; }
+    .m { max-width: 86%; padding: 9px 13px; border-radius: 16px; font-size: 15px; line-height: 1.38; color: #121212; white-space: pre-line; font-weight: 500; box-shadow: 0 1px 1px rgba(0,0,0,.06); }
+    .m b { font-weight: 800; }
+    .bot { align-self: flex-start; background: #fff; border-bottom-left-radius: 5px; }
+    .user { align-self: flex-end; background: #dcf3c8; border-bottom-right-radius: 5px; }
+    .service { align-self: center; background: rgba(0,0,0,.28); color: #fff; font-size: 13px; padding: 4px 12px; border-radius: 99px; }
+    .kb { align-self: flex-start; width: 86%; display: grid; gap: 5px; margin-top: -3px; }
+    .kb div { display: flex; gap: 5px; }
+    .kb span { flex: 1; text-align: center; background: rgba(60, 80, 100, .32); color: #fff; font-size: 14px; font-weight: 700; padding: 9px 6px; border-radius: 10px; }
+    .reply { display: grid; gap: 6px; padding: 8px; background: #f1f3f6; border-top: 1px solid #e1e4ea; }
+    .reply div { display: flex; gap: 6px; }
+    .reply span { flex: 1; text-align: center; background: #fff; border-radius: 10px; padding: 11px 6px; font-size: 15px; font-weight: 700; color: #222; box-shadow: 0 1px 1px rgba(0,0,0,.1); }
+    .input { padding: 12px 16px 26px; background: #fff; color: #9aa3ad; font-size: 15px; border-top: 1px solid #e5e8ee; }
+    .toast { position: absolute; left: 50%; top: 120px; translate: -50% 0; background: rgba(20,20,30,.82); color: #fff; font-size: 14px; font-weight: 700; padding: 10px 16px; border-radius: 12px; white-space: nowrap; }
+</style>
+</head>
+<body>
+<div class="card" id="card"></div>
+<script>
+    const esc = (s) => s.replace(/&(?!lt;|gt;|amp;)/g, '&amp;');
+    const rows = (kb, cls) => `<div class="${cls}">${kb.map((r) => `<div>${r.map((b) => `<span>${esc(b)}</span>`).join('')}</div>`).join('')}</div>`;
+
+    // Рисует карточку по записи прогона tests/simulate.py
+    window.renderBot = (data, meta) => {
+        const chat = data.chat;
+        let replyKb = [];
+        for (const e of chat) if (e.reply_kb) replyKb = e.reply_kb;
+        const msgs = chat.map((e) => {
+            if (e.from === 'service') return `<p class="m service">${esc(e.text)}</p>`;
+            const bubble = `<p class="m ${e.from === 'bot' ? 'bot' : 'user'}">${esc(e.text)}</p>`;
+            return bubble + (e.buttons && e.buttons.length ? rows(e.buttons, 'kb') : '');
+        }).join('');
+        const admin = data.admin.slice(-meta.adminCount || -1).map((e) =>
+            `<p class="${e.from === 'bot' ? '' : 'me'}">${e.from === 'bot' ? '' : 'Ответ менеджера: '}${esc(e.text).replace(/<\/?i>/g, '')}</p>`).join('');
+        document.documentElement.style.setProperty('--a', meta.accent);
+        document.getElementById('card').innerHTML = `
+            <div>
+                <span class="tag"><i></i>Telegram-бот · Python</span>
+                <h1>${meta.title}</h1>
+                <p class="sub">${meta.sub}</p>
+                <ul>${meta.features.map((f) => `<li>${f}</li>`).join('')}</ul>
+                ${admin ? `<div class="admin"><div class="admin__head"><b>${meta.initials}</b>${meta.adminTitle}</div>${admin}</div>` : ''}
+            </div>
+            <div class="phone"><div class="screen">
+                <div class="top"><span class="ava">${meta.initials}</span><span><b>${meta.botName}</b><span>бот</span></span></div>
+                <div class="msgs">${msgs}</div>
+                ${replyKb.length ? rows(replyKb, 'reply') : '<div class="input">Сообщение</div>'}
+            </div>${meta.toast ? `<div class="toast">${meta.toast}</div>` : ''}</div>`;
+    };
+</script>
+</body>
+</html>
