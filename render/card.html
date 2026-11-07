@@ -2,21 +2,22 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
     * { box-sizing: border-box; margin: 0; }
     body { font-family: Manrope, sans-serif; }
-    .card { position: relative; width: 1320px; height: 880px; overflow: hidden; display: grid; grid-template-columns: 1fr 440px; gap: 56px; padding: 50px 96px 0 88px;
-        background: radial-gradient(circle at 85% 20%, color-mix(in srgb, var(--a) 45%, transparent), transparent 55%), linear-gradient(140deg, #14112b, #1d1840); color: #e7e5f4; }
-    .tag { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; letter-spacing: .06em; text-transform: uppercase; color: #fff;
-        background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); padding: 10px 18px; border-radius: 99px; }
-    .tag i { width: 10px; height: 10px; border-radius: 50%; background: #22c55e; }
-    h1 { font: 800 54px/1.08 Unbounded, sans-serif; color: #fff; margin: 28px 0 18px; letter-spacing: -.02em; }
-    h1 em { font-style: normal; color: color-mix(in srgb, var(--a) 55%, #fff); }
-    .sub { font-size: 22px; color: #b9b5d6; font-weight: 600; }
+    .card { position: relative; position: relative; width: 1320px; height: 880px; overflow: hidden; display: grid; grid-template-columns: 1fr 440px; gap: 56px; padding: 50px 96px 0 88px;
+        background: radial-gradient(circle at 78% 30%, rgba(201, 163, 92, .1), transparent 55%), #0b0b0c; color: #f4efe6; }
+    .card { isolation: isolate; }
+    .card::before { content: ""; position: absolute; z-index: -1; inset: 22px; border: 1px solid #3a3326; border-radius: 12px; pointer-events: none; }
+    .tag { display: inline-flex; align-items: center; gap: 14px; font-weight: 700; font-size: 18px; letter-spacing: .16em; text-transform: uppercase; color: #c9a35c; }
+    .tag i { order: 1; width: 48px; height: 1px; background: #c9a35c; }
+    h1 { font: 700 60px/1.06 'Playfair Display', Georgia, serif; color: #f4efe6; margin: 28px 0 18px; }
+    h1 em { font-style: italic; color: #c9a35c; }
+    .sub { font-size: 22px; color: #9c968c; font-weight: 600; }
     ul { list-style: none; padding: 0; margin-top: 34px; display: grid; gap: 14px; }
-    li { display: flex; align-items: center; gap: 14px; font-size: 22px; font-weight: 700; color: #fff; }
-    li::before { content: ""; width: 28px; height: 28px; flex: none; border-radius: 50%; background: var(--a) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 15px no-repeat; }
+    li { display: flex; align-items: center; gap: 14px; font-size: 22px; font-weight: 700; color: #f4efe6; }
+    li::before { content: ""; width: 28px; height: 28px; flex: none; border-radius: 50%; background: #c9a35c url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a1408' stroke-width='3.5' stroke-linecap='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 15px no-repeat; }
     .admin { margin-top: 40px; width: 560px; background: #fff; color: #1f1d33; border-radius: 22px; padding: 18px 22px; box-shadow: 0 24px 50px -20px rgba(0,0,0,.6); }
     .admin__head { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 800; color: #6b6890; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 10px; }
     .admin__head b { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; background: var(--a); color: #fff; font-size: 15px; }
